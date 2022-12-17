@@ -58,7 +58,6 @@ int main(int argc, char **argv) {
         }
     }
 
-
     //Shared memory info
     int  shmid = -1;    // Initialize shmid before shmget
     void *shm = NULL; // Initialize shared segment pointer before shmat
@@ -85,6 +84,7 @@ int main(int argc, char **argv) {
         report_and_exit("shmat", SHMAT_ERROR);
     }
 
+    // Keep shared memory segment fields in SharedData object for convenience
     shared.current_transaction = (unsigned int *)shm;
     shared.no_requested_segment = (unsigned int*)(shm + sizeof(unsigned int));
     shared.readers = (unsigned int*)(shm + 2*sizeof(unsigned int) + lines_per_segment * MAX_LINE_SIZE * sizeof(char));
