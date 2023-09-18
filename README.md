@@ -1,5 +1,5 @@
 ## OS -- Assignment_1
-##### Author: Yannis Zervakis--sdi1800048
+##### Author: Yannis Zervakis
 
 ### *General*
 In  this assignment we are trying to simulate and synchronize a readers-writers problem. In fact, we have one main writer (parent process) who satisfies requests from many readers (children).
